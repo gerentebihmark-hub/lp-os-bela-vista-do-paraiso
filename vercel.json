@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/blink",
+      "destination": "/blink/index.html"
+    },
+    {
+      "source": "/blink/",
+      "destination": "/blink/index.html"
+    }
+  ]
+}

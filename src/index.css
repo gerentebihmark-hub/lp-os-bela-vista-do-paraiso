@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #53d22d;
+  --color-dark-green: #006932;
+  --color-background-light: #ffffff;
+  --color-surface-light: #f8fafc;
+  --color-text-main: #1e293b;
+  --color-text-muted: #64748b;
+  --color-border-light: #e2e8f0;
+  --color-accent-green: #426039;
+
+  --font-display: "Manrope", "Noto Sans", sans-serif;
+  --font-body: "Noto Sans", sans-serif;
+
+  --radius-DEFAULT: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-full: 9999px;
+}
+
+@layer base {
+  body {
+    @apply bg-background-light text-text-main font-display overflow-x-hidden;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.bg-custom-image {
+  background-image: url('/images/bg-back.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-bg-responsive {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (max-width: 767px) {
+  .hero-bg-responsive {
+    background-image: url('/images/hero-mobile.webp');
+    background-position: center 30% !important;
+    background-size: cover !important;
+  }
+  
+  .hero-overlay-custom {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 20, 10, 0) 0%,
+      rgba(0, 20, 10, 0) 45%,
+      rgba(0, 20, 10, 0.45) 65%,
+      rgba(0, 20, 10, 0.85) 85%,
+      rgba(0, 20, 10, 1) 100%
+    ) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-bg-responsive {
+    background-image: url('/images/hero-desktop.webp');
+  }
+  
+  .hero-overlay-custom {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 20, 10, 0) 0%,
+      rgba(0, 20, 10, 0) 35%,
+      rgba(0, 20, 10, 0.45) 60%,
+      rgba(0, 20, 10, 0.85) 85%,
+      rgba(0, 20, 10, 1) 100%
+    ) !important;
+  }
+}
+
+
+
+
+
+
